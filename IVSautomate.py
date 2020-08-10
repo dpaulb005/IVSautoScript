@@ -2,7 +2,7 @@ import restful
 import json
 import boto3
 import sys
-client = boto3.client('ivs', aws_access_key_id ='AKIAUJ3D6TYQNACGXDPK' , aws_secret_access_key = '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')
+client = boto3.client('ivs', aws_access_key_id ='' , aws_secret_access_key = '')
 def main(pc_access_key, pc_secret_key, type_stream,name_stream,command):
     client = boto3.client('ivs', aws_access_key_id=pc_access_key,
     aws_secret_access_key=pc_secret_key)
