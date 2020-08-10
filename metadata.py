@@ -9,7 +9,7 @@ with open('test.json', "r") as data:
      dictionary = ast.literal_eval(data.read())
 print(dictionary[0])
 
-client = boto3.client('ivs', aws_access_key_id ='AKIAUJ3D6TYQNACGXDPK' , aws_secret_access_key = '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')
+client = boto3.client('ivs', aws_access_key_id ='' , aws_secret_access_key = '')
 name_stream = input('Channel Name:')
 channel_all = client.list_channels(
         filterByName = name_stream,
