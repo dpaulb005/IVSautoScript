@@ -86,7 +86,7 @@ if __name__ == "__main__":
         print("Argument 1 (required): AWS Access Key (e.g. ABCDE1FGHIJKL2MNOPQR)")
         print("Argument 2 (required): AWS Secret Access Key (e.g. aBCdE1fGHijKlMn+OPq2RsTUV3wxy45Zab6c+7D8)")
         print("Argument 3 (required): Type of Stream (e.g. BASIC or STANDARD, defaults to basic if input is not BASIC or STANDARD)")
-        print("Argument 4 (required): Name of Stream (e.g. Name can be anything if name does not exist stream will create automatically)")
+        print("Argument 4 (required): Name of Stream (e.g. Name can be anything, if name is not already a channel stream will create automatically)")
         print("Argument 5 (required): Command (e.g. Delete,Stop,Start,Create)")
         print(" ")
         sys.exit(3)
