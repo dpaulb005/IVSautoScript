@@ -47,7 +47,7 @@ def main(pc_access_key, pc_secret_key, type_stream,name_stream,command):
                     streamKeyData = client.get_stream_key(
                         arn=stream_arn)
                     stream_key = streamKeyData['streamKey']['value']
-                    data_json = restful.get_out_streams_configs("10.0.0.169", out_stream_id=47)
+                    data_json = restful.get_out_streams_configs('ENCODER_IP_HERE', out_stream_id=47)
                     turnOn = data_json['enable']
                     data_json['enable'] = True
                     streamURL = '{"url":"' + 'rtmps://' + ingest_server + '/app/' + stream_key + '"}'
@@ -55,7 +55,7 @@ def main(pc_access_key, pc_secret_key, type_stream,name_stream,command):
                     data_out = data_json['output_type']['rtmp']['service']['data']
                     parsed_data = json.loads(data_out)
                     streamURL = parsed_data['url']
-                    restful.put_out_streams_configs('10.0.0.169', '47', data_json)
+                    restful.put_out_streams_configs('ENCODER_IP_HERE', '47' , data_json )
                 if command.lower() == 'create':
                     create(pc_access_key, pc_secret_key, type_stream, name_stream, command)
                     print('Channel Created')
@@ -76,14 +76,14 @@ def create(pc_access_key, pc_secret_key, type_stream,name_stream,command):
     responseStreamkey = client.get_stream_key(arn=arn_key)
     streamKey = responseStreamkey['streamKey']['value']
     streamUrl = '{"url":"' + 'rtmps://' + ingest + '/app/' + streamKey + '"}'
-    data_json = restful.get_out_streams_configs("10.0.0.169" ,out_stream_id=47)
+    data_json = restful.get_out_streams_configs("ENCODER_IP_HERE" ,out_stream_id=47)
     turnOn = data_json['enable']
     data_json['enable'] = True
     data_json['output_type']['rtmp']['service']['data'] = streamUrl
     data_out = data_json['output_type']['rtmp']['service']['data']
     parsed_data = json.loads(data_out)
     rtmp_loader = parsed_data['url']
-    restful.put_out_streams_configs('10.0.0.169', '47' , data_json )
+    restful.put_out_streams_configs('ENCODER_IP_HERE', '47' , data_json )
 
 if __name__ == "__main__":
     if len(sys.argv) <5:
