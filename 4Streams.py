@@ -8,22 +8,22 @@ client = boto3.client('ivs')
 def main(pc_access_key, pc_secret_key,type_stream):
     client = boto3.client('ivs', aws_access_key_id=pc_access_key,aws_secret_access_key = pc_secret_key)
     if command.lower() == 'start':
-        start(pc_access_key, pc_secret_key, type_stream,  '10.0.0.197')
-        start(pc_access_key, pc_secret_key, type_stream,  '10.0.0.196')
-        start(pc_access_key, pc_secret_key, type_stream,  '10.0.0.195')
-        start(pc_access_key, pc_secret_key, type_stream, '10.0.0.194')
+        start(pc_access_key, pc_secret_key, type_stream,  'ENCODER_1_IP')
+        start(pc_access_key, pc_secret_key, type_stream,  'ENCODER_2_IP')
+        start(pc_access_key, pc_secret_key, type_stream,  'ENCODER_3_IP')
+        start(pc_access_key, pc_secret_key, type_stream, 'ENCODER_4_IP')
 
 
 
 
     elif command.lower() == 'create':
-        encoder_data = restful.get_encoders('10.0.0.197')
+        encoder_data = restful.get_encoders('ENCODER_1_IP')
         status_data = encoder_data['vid_encoders']
         active_data = json.dumps(status_data[0]["status"])
-        create(pc_access_key, pc_secret_key, type_stream,  '10.0.0.197')
-        create(pc_access_key, pc_secret_key, type_stream,   '10.0.0.196')
-        create(pc_access_key, pc_secret_key, type_stream,   '10.0.0.195')
-        create(pc_access_key, pc_secret_key, type_stream,  '10.0.0.194')
+        create(pc_access_key, pc_secret_key, type_stream,  'ENCODER_1_IP')
+        create(pc_access_key, pc_secret_key, type_stream,   'ENCODER_2_IP')
+        create(pc_access_key, pc_secret_key, type_stream,   'ENCODER_3_IP')
+        create(pc_access_key, pc_secret_key, type_stream,  'ENCODER_4_IP')
 
 
 def create(pc_access_key, pc_secret_key, type_stream,ip_encode):
