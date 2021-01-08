@@ -7,8 +7,8 @@ import time
 def email(old_status, active_data,ip_encode,passwordGmail):
     port = 587  # For starttls
     smtp_server = "smtp.gmail.com"
-    sender_email = "david.brown@videon-central.com"
-    receiver_email = "dpb23@scasd.org"
+    sender_email = ""
+    receiver_email = ""
     password = passwordGmail
     message = """\
     Subject: Stream has changed status's
